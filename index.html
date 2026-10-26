@@ -7,8 +7,8 @@
   window.SHEET_URL = "https://script.google.com/macros/s/AKfycbzyeWOMUq1Q5xamif3-aujA4o4wlUVc7-DhtIEENMo0zlfUEB-oGcFD6-RlO6EPpunrjA/exec";
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light only">
-<meta name="supported-color-schemes" content="light only">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
 <meta name="theme-color" content="#fcf6f2">
 <title>தரணி ❤ ஹரிஷ் · திருமண அழைப்பிதழ்</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
   --name-size:58; --heart-size:26; --names-top:15; --name1-x:-24; --name2-x:26; --couple-h:46; --couple-x:4; --temple-w:50; --temple-h:62; --temple-fx:22;
   --h2-size:34; --sub-size:14; --date-size:72; --venue-size:22; --detail-size:16; --coconut-size:250; --cart-size:300; --door-kolam:80;
   --cart-w:min(calc(var(--cart-size) * 1px), 86vw); --bg-img:none; --bg-top:none; --bgw:min(100vw,900px); --coco-w:min(calc(var(--coconut-size) * 1px),82vw);
-  color-scheme:light only;
+  color-scheme:light dark;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
@@ -33,6 +33,11 @@
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);background:var(--paper)}
 body{margin:0;height:100%;overflow:hidden;font-family:var(--font);color:var(--ink);background:var(--paper);-webkit-tap-highlight-color:transparent}
 button,input,textarea{font:inherit}
+/* the page's own "dark theme" is the same light invite, so phone dark modes leave it alone */
+html,body{background-color:var(--paper)!important;color:var(--ink)}
+input,textarea{background-color:#fffdf8!important;color:var(--ink)!important;caret-color:var(--ink)}
+::placeholder{color:#9a7a64!important;opacity:1}
+::selection{background:#f1d9a8;color:var(--ink)}
 
 /* ================= DOORS ================= */
 .gate{position:fixed;inset:0;z-index:10;cursor:pointer;outline:none}
@@ -78,7 +83,7 @@ button,input,textarea{font:inherit}
 .bgfixed{position:fixed;inset:0;pointer-events:none;background:var(--paper)}
 .bgfixed::before{content:"";position:absolute;left:0;right:0;top:0;height:calc(var(--bgw) * .766);background:var(--bg-top) top center/var(--bgw) auto no-repeat;-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}
 .bgfixed::after{content:"";position:absolute;inset:0;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .42 0 0 0 0 .38 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.invite{position:fixed;inset:0;color-scheme:light only;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:transparent;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.invite{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:transparent;scroll-snap-type:y mandatory;scroll-behavior:smooth}
 section{position:relative;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden}
 .center{text-align:center}
 
